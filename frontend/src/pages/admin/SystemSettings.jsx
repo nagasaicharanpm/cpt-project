@@ -1,0 +1,1 @@
+export default function SystemSettings(){return <><h1 className="page-title">System settings</h1><div className="card p-4"><p className="muted">Runtime secrets and database settings are managed through environment variables. No credentials are stored in the frontend.</p></div></>}

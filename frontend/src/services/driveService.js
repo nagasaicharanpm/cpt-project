@@ -1,0 +1,1 @@
+import api from './api';export const listDrives=()=>api.get('/drives');export const createDrive=d=>api.post('/drives',d);export const updateDrive=(id,d)=>api.put(`/drives/${id}`,d);export const deleteDrive=id=>api.delete(`/drives/${id}`)

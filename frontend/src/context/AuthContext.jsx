@@ -1,0 +1,5 @@
+import {createContext,useContext,useEffect,useState} from 'react'
+import * as auth from '../services/authService'
+const C=createContext(null)
+export function AuthProvider({children}){const [user,setUser]=useState(()=>{try{return JSON.parse(localStorage.getItem('crms_user'))}catch{return null}});const [loading,setLoading]=useState(true);useEffect(()=>{if(localStorage.getItem('crms_token'))auth.me().then(r=>{setUser(r.data);localStorage.setItem('crms_user',JSON.stringify(r.data))}).catch(()=>{}).finally(()=>setLoading(false));else setLoading(false)},[]);const login=async d=>{const r=await auth.login(d);localStorage.setItem('crms_token',r.data.token);localStorage.setItem('crms_user',JSON.stringify(r.data.user));setUser(r.data.user);return r.data};const register=d=>auth.register(d);const logout=()=>{localStorage.removeItem('crms_token');localStorage.removeItem('crms_user');setUser(null)};return <C.Provider value={{user,loading,login,register,logout}}>{children}</C.Provider>}
+export const useAuth=()=>useContext(C)

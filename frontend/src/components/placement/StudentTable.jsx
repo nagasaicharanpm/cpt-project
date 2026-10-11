@@ -1,0 +1,1 @@
+export default function StudentTable({rows=[]}){return <div className="table-responsive"><table className="table"><thead><tr><th>Name</th><th>Email</th><th>Department</th><th>CGPA</th></tr></thead><tbody>{rows.map(x=><tr key={x.id}><td>{x.name||x.user?.name}</td><td>{x.email||x.user?.email}</td><td>{x.department||'—'}</td><td>{x.cgpa||'—'}</td></tr>)}</tbody></table></div>}
