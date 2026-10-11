@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.PlacementRecord;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface PlacementRecordRepository extends JpaRepository<PlacementRecord,Long>{List<PlacementRecord> findByStudentUserId(Long userId);}

@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/crms?createDatabaseIfNotExist=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+app:
+  jwt-secret: ${JWT_SECRET:local-development-secret-change-me-please-32chars}
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  file-storage-path: ${FILE_STORAGE_PATH:uploads}
+crms:
+  bootstrap:
+    admin-email: ${CRMS_BOOTSTRAP_ADMIN_EMAIL:}
+    admin-password: ${CRMS_BOOTSTRAP_ADMIN_PASSWORD:}

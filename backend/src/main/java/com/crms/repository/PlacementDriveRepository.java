@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.PlacementDrive;import org.springframework.data.jpa.repository.JpaRepository;public interface PlacementDriveRepository extends JpaRepository<PlacementDrive,Long>{}

@@ -17,3 +17,6 @@ dist/
 # IDE settings
 .idea/
 .vscode/
+
+# Local nested repository backup
+.git-backup/

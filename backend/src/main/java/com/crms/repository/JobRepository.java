@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import com.crms.enums.JobStatus;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface JobRepository extends JpaRepository<JobPosting,Long>{List<JobPosting> findByStatus(JobStatus status);List<JobPosting> findByCompanyOwnerId(Long id);}

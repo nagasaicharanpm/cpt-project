@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*;public interface InterviewRepository extends JpaRepository<Interview,Long>{List<Interview> findByApplicationStudentUserId(Long id);List<Interview> findByApplicationId(Long id);}
