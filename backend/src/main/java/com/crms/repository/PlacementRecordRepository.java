@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.PlacementRecord;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.*;public interface PlacementRecordRepository extends MongoRepository<PlacementRecord,Long>{List<PlacementRecord> findByStudentUserId(Long userId);}

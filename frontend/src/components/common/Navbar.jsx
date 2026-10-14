@@ -1,0 +1,1 @@
+import {Link} from 'react-router-dom';export default function Navbar(){return <nav className="navbar bg-white border-bottom px-4"><Link className="navbar-brand text-primary" to="/">CampusConnect</Link><div><Link className="btn btn-link" to="/jobs">Jobs</Link><Link className="btn btn-primary" to="/login">Login</Link></div></nav>}

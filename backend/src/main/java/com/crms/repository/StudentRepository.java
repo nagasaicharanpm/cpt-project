@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.Optional;public interface StudentRepository extends MongoRepository<Student,Long>{Optional<Student> findByUserId(Long id);}

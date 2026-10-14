@@ -1,0 +1,1 @@
+export default function CompanyTable({rows=[]}){return <div className="table-responsive"><table className="table"><thead><tr><th>Company</th><th>Industry</th><th>Website</th></tr></thead><tbody>{rows.map(x=><tr key={x.id}><td>{x.name}</td><td>{x.industry||'—'}</td><td>{x.website||'—'}</td></tr>)}</tbody></table></div>}

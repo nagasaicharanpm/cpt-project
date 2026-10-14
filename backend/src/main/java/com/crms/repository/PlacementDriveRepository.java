@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.PlacementDrive;import org.springframework.data.mongodb.repository.MongoRepository;public interface PlacementDriveRepository extends MongoRepository<PlacementDrive,Long>{}

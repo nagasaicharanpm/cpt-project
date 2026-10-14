@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import com.crms.enums.JobStatus;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.*;public interface JobRepository extends MongoRepository<JobPosting,Long>{List<JobPosting> findByStatus(JobStatus status);List<JobPosting> findByCompanyOwnerId(Long id);}

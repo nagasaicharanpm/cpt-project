@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.Optional;public interface CompanyRepository extends MongoRepository<Company,Long>{Optional<Company> findByOwnerId(Long id);}

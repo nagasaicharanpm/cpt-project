@@ -1,0 +1,22 @@
+# Downloaded tools
+.tools/
+
+# Java compiled files
+*.class
+
+# Build folders
+target/
+build/
+dist/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE settings
+.idea/
+.vscode/
+
+# Local nested repository backup
+.git-backup/

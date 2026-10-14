@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.Notification;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.*;public interface NotificationRepository extends MongoRepository<Notification,Long>{List<Notification> findByUserIdOrderByCreatedAtDesc(Long userId);}

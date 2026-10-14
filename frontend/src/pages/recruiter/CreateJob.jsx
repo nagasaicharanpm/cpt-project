@@ -1,0 +1,1 @@
+import {useNavigate} from 'react-router-dom';import JobForm from '../../components/recruiter/JobForm';import {createJob} from '../../services/jobService';export default function CreateJob(){const nav=useNavigate();return <><h1 className="page-title">Create job</h1><JobForm onSubmit={async d=>{await createJob(d);nav('/recruiter/jobs')}}/></>}

@@ -1,0 +1,1 @@
+import StudentProfileForm from '../../components/student/StudentProfileForm';export default function StudentProfile(){return <><h1 className="page-title">My profile</h1><p className="muted">Keep your academic details current for eligibility checks.</p><StudentProfileForm/></>}

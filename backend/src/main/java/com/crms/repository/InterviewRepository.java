@@ -1,0 +1,1 @@
+package com.crms.repository;import com.crms.entity.*;import org.springframework.data.mongodb.repository.MongoRepository;import java.util.*;public interface InterviewRepository extends MongoRepository<Interview,Long>{List<Interview> findByApplicationStudentUserId(Long id);List<Interview> findByApplicationId(Long id);}

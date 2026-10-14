@@ -1,0 +1,1 @@
+import {Outlet} from 'react-router-dom';import Sidebar from './Sidebar.jsx';import DashboardNavbar from './DashboardNavbar.jsx';export default function DashboardLayout(){return <><DashboardNavbar/><div className="container-fluid"><div className="row"><div className="col-md-2 p-0"><Sidebar/></div><main className="col-md-10 p-4"><Outlet/></main></div></div></>}
