@@ -29,7 +29,6 @@ services:
   - type: web
     name: crms-frontend
     runtime: static
-    plan: free
     branch: render-deploy-fix
     rootDir: frontend
     buildCommand: npm ci && npm run build
