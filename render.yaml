@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: crms-backend
+    runtime: docker
+    plan: free
+    branch: render-deploy-fix
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: crms
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        fromService:
+          type: web
+          name: crms-frontend
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: FILE_STORAGE_PATH
+        value: uploads
+      - key: CRMS_BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: CRMS_BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
+
+  - type: web
+    name: crms-frontend
+    runtime: static
+    plan: free
+    branch: render-deploy-fix
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: crms-backend
+          envVarKey: RENDER_EXTERNAL_URL
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
