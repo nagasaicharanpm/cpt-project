@@ -1,2 +1,2 @@
-import {Link} from 'react-router-dom';import {useAuth} from '../../context/AuthContext.jsx'
+import {Link} from 'react-router-dom';import {useAuth} from '../context/AuthContext.jsx'
 export default function DashboardNavbar(){const {user,logout}=useAuth();return <nav className="navbar bg-white border-bottom px-3"><Link className="navbar-brand text-primary" to="/dashboard">Campus<span className="text-dark">Connect</span></Link><div className="d-flex align-items-center gap-3"><span className="muted small">{user?.name||user?.email}</span><button className="btn btn-outline-secondary btn-sm" onClick={logout}>Sign out</button></div></nav>}

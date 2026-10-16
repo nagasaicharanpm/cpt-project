@@ -3,7 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": { "dev": "node node_modules/vite/bin/vite.js", "build": "node node_modules/vite/bin/vite.js build", "preview": "node node_modules/vite/bin/vite.js preview" },
+  "scripts": {
+    "dev": "node node_modules/vite/bin/vite.js",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "node node_modules/vite/bin/vite.js preview"
+  },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
     "axios": "latest",
@@ -12,8 +16,6 @@
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
-    "recharts": "latest",
     "vite": "latest"
-  },
-  "devDependencies": {}
+  }
 }

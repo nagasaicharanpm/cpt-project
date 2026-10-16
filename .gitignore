@@ -20,3 +20,11 @@ dist/
 
 # Local nested repository backup
 .git-backup/
+# Local runtime database files
+.runtime/
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Generated frontend build
+frontend/dist/

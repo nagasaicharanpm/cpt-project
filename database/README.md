@@ -1,6 +1,9 @@
 # Database setup
 
-1. Install MySQL 8 and run `schema.sql` as an administrator.
-2. Set `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD` in `backend/.env` or the process environment.
-3. Start the API once; Hibernate creates the tables from the entity relationships.
-4. For production, use a migration tool and set `spring.jpa.hibernate.ddl-auto=validate`.
+The current backend uses MongoDB, not MySQL or JPA.
+
+1. Start MongoDB on `mongodb://127.0.0.1:27017`.
+2. Set `MONGODB_URI` and `MONGODB_DATABASE` in `backend/.env` if you are not using the local defaults.
+3. Start the API. MongoDB collections and indexes are created automatically by Spring Data.
+
+The `schema.sql` file is retained as a legacy reference from the earlier MySQL version and is not used by the current application.

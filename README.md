@@ -1,12 +1,12 @@
 # Campus Recruitment Management System
 
-A full-stack college placement management application with a React/Vite client and Spring Boot/MySQL API.
+A full-stack college placement management application with a React/Vite client and Spring Boot/MongoDB API.
 
 ## Project layout
 
 - `frontend/` React application with role-aware routing and API services
 - `backend/` Spring Boot REST API with JWT security, JPA entities, validation, and role policies
-- `database/` MySQL schema and setup notes
+- `database/` data model notes
 - `docs/` API and data model documentation
 
 ## Prerequisites
@@ -14,13 +14,13 @@ A full-stack college placement management application with a React/Vite client a
 - Node.js 20+
 - Java 21 (the backend is compiled for Java 21)
 - Maven 3.9+ or Maven Wrapper
-- MySQL 8+
+- MongoDB 7+
 
 For this workspace, portable copies are available under `.tools/`:
 
 - `.tools/jdk21/jdk-21.0.12.1+1`
 - `.tools/maven/apache-maven-3.9.11`
-- `.tools/mysql-26.7.0-winx64.zip`
+- `.tools/mongodb-win32-x86_64-windows-7.0.43/`
 
 ## Run locally
 
@@ -37,7 +37,19 @@ npm install
 npm run dev
 ```
 
-Import `database/schema.sql` into MySQL first. The API listens on `http://localhost:8080` and Vite on `http://localhost:5173`.
+The API uses MongoDB at `mongodb://127.0.0.1:27017/crms`, listens on `http://localhost:8080`, and Vite listens on `http://localhost:5173`.
+
+For a local run after the portable tools are installed:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start-local.ps1
+```
+
+To stop the local services:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\stop-local.ps1
+```
 
 The public registration endpoint allows only `STUDENT` and `RECRUITER`. Create the first privileged account through the documented secure bootstrap variables (`CRMS_BOOTSTRAP_ADMIN_EMAIL` and `CRMS_BOOTSTRAP_ADMIN_PASSWORD`) or an operator-approved database migration.
 

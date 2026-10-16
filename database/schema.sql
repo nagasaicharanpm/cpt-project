@@ -1,3 +1,4 @@
+-- Legacy MySQL schema. The current backend uses MongoDB; this file is not executed.
 CREATE DATABASE IF NOT EXISTS crms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE crms;
 -- Hibernate creates and evolves tables from the JPA model in development.
